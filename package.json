@@ -1,0 +1,61 @@
+{
+  "name": "istore",
+  "version": "1.0.0",
+  "description": "An immutable store that exposes an RxJS observable. Great for React.",
+  "main": "build/index.js",
+  "scripts": {
+    "clean": "rimraf build && mkdir -p build/test",
+    "lint": "eslint source && eslint test",
+    "prebuild": "npm run clean",
+    "build": "babel -d build source -s && babel -d build/test test",
+    "test": "node build/test/index.js",
+    "prepublish": "npm run build",
+    "validate": "npm run lint && npm run build && npm test",
+    "validate-dev": "npm run lint && npm run build && npm test | faucet",
+    "audit": "nsp package",
+    "missing": "dependency-check package.json",
+    "extra": "dependency-check package.json --extra --ignore",
+    "ok": "echo 'OK if the dependencies above are all devDependencies.' && echo 'Clean up any unused dependencies.'",
+    "deps": "npm run missing && npm run extra && npm run ok",
+    "precheck": "npm run validate",
+    "check": "npm run audit && npm run deps && npm outdated --depth 0",
+    "precommit": "pre-commit run"
+  },
+  "pre-commit": [
+    "check"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericelliott/istore.git"
+  },
+  "keywords": [
+    "immutable",
+    "rxjs",
+    "reactive",
+    "observable",
+    "store",
+    "react",
+    "flux"
+  ],
+  "author": "Eric Elliott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericelliott/istore/issues"
+  },
+  "homepage": "https://github.com/ericelliott/istore",
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "babel-eslint": "^3.1.9",
+    "dependency-check": "^2.4.0",
+    "eslint": "^0.22.1",
+    "faucet": "0.0.1",
+    "nsp": "^1.0.1",
+    "precommit-hook": "^2.0.1",
+    "rimraf": "^2.3.4",
+    "tape": "^4.0.0"
+  },
+  "dependencies": {
+    "dpath": "^1.0.0",
+    "immutable": "^3.7.3"
+  }
+}
