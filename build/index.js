@@ -27,7 +27,8 @@ var _rx = require('rx');
 var _rx2 = _interopRequireDefault(_rx);
 
 var irecord = function irecord(obj) {
-  var instance = undefined;
+  var stamp = undefined,
+      instance = undefined;
 
   var history = [];
 
@@ -46,7 +47,7 @@ var irecord = function irecord(obj) {
 
   history.push(_immutable2['default'].Map(obj));
 
-  instance = _stampit2['default'].convertConstructor(_events2['default'].EventEmitter).methods({
+  stamp = _stampit2['default'].convertConstructor(_events2['default'].EventEmitter).methods({
     get: function get(key) {
       return state().getIn((0, _dpath2['default'])(key));
     },
@@ -68,9 +69,11 @@ var irecord = function irecord(obj) {
 
     this.subscribe = source.subscribe.bind(source);
     this.filter = source.filter.bind(source);
-  }).create();
+  });
 
-  return instance;
+  instance = stamp.create();
+
+  return _stampit2['default'].extend(instance, { stamp: stamp });
 };
 
 exports['default'] = irecord;
