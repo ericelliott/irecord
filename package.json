@@ -1,9 +1,10 @@
 {
-  "name": "istore",
+  "name": "irecord",
   "version": "1.0.0",
-  "description": "An immutable store that exposes an RxJS observable. Great for React.",
+  "description": "An immutable object map that exposes an RxJS observable. Great for React.",
   "main": "build/index.js",
   "scripts": {
+    "init": "rimraf .validate.json && rimraf .jshintrc",
     "clean": "rimraf build && mkdir -p build/test",
     "lint": "eslint source && eslint test",
     "prebuild": "npm run clean",
@@ -40,12 +41,12 @@
   "author": "Eric Elliott",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ericelliott/istore/issues"
+    "url": "https://github.com/ericelliott/irecord/issues"
   },
-  "homepage": "https://github.com/ericelliott/istore",
+  "homepage": "https://github.com/ericelliott/irecord",
   "devDependencies": {
     "babel": "^5.4.7",
-    "babel-eslint": "^3.1.9",
+    "babel-eslint": "^3.1.10",
     "dependency-check": "^2.4.0",
     "eslint": "^0.22.1",
     "faucet": "0.0.1",
@@ -56,6 +57,8 @@
   },
   "dependencies": {
     "dpath": "^1.0.0",
-    "immutable": "^3.7.3"
+    "immutable": "^3.7.3",
+    "rx": "^2.5.3",
+    "stampit": "^1.2.0"
   }
 }
