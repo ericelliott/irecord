@@ -7,7 +7,7 @@ import stampit from 'stampit';
 import Rx from 'rx';
 
 const irecord = function (obj) {
-  let instance;
+  let stamp, instance;
 
   const history = [];
 
@@ -26,7 +26,7 @@ const irecord = function (obj) {
 
   history.push(immutable.Map(obj));
 
-  instance =
+  stamp =
     stampit.convertConstructor(events.EventEmitter)
     .methods({
       get (key) {
@@ -51,10 +51,14 @@ const irecord = function (obj) {
 
       this.subscribe = source.subscribe.bind(source);
       this.filter = source.filter.bind(source);
-    })
-    .create();
+    });
 
-  return instance;
+  instance = stamp.create();
+
+  return stampit.extend(
+    instance,
+    { stamp }
+  );
 };
 
 export default irecord;

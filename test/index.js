@@ -3,6 +3,7 @@
 import test from 'tape';
 import irecord from '../index.js';
 import rx from './rx';
+import stampit from './stampit';
 
 test('immutable', (assert) => {
   const original = {
