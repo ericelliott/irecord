@@ -26,7 +26,7 @@ Instead of subscribing to change events with `.on()`, you could use the RxJS `.s
 
 ### Why would I want to use this with React?
 
-Pretty simple really, it makes it easy for your compenents to subscribe to changes in your store. Since it's backed by Immutable.js, you only render when something actually changes, which can save React the trouble of building a whole virtual DOM and diffing that against the actual DOM.
+Pretty simple really, it makes it easy for your components to subscribe to changes in your store. Since it's backed by Immutable.js, you only render when something actually changes, which can save React the trouble of building a whole virtual DOM and diffing that against the actual DOM.
 
 Why even start if you know nothing is different? irecord knows when React doesn't have any work to do so you only run `React.render()` when it does.
 
