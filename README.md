@@ -4,6 +4,33 @@ An immutable object map that exposes an RxJS observable.
 
 Great for React.
 
+Written for the [Learn JavaScript with Eric Elliott](https://ericelliottjs.com/) online JavaScript course series.
+
+
+## Wait, what is this thing?
+
+Imagine a JavaScript object that just stores data. Now imagine that every time you change that object, the object emits a change event. Yeah, kindof like Backbone models, but different.
+
+
+### How is it different?
+
+When you change the value of a key, the previous value doesn't get erased. Instead, it gets added to a history. Every time you make a change, the new object state and the previous object state get emitted with the change event.
+
+In other words, you can very easily compare the two objects if you need to see what changed. In fact, if you set a property to the same value as the previous value, no change event gets emitted at all.
+
+
+### What's this RxJS thing?
+
+Instead of subscribing to change events with `.on()`, you could use the RxJS `.subscribe()` method. Maybe later we'll add lots of other neat capabilities that RxJS makes possible.
+
+
+### Why would I want to use this with React?
+
+Pretty simple really, it makes it easy for your compenents to subscribe to changes in your store. Since it's backed by Immutable.js, you only render when something actually changes, which can save React the trouble of building a whole virtual DOM and diffing that against the actual DOM.
+
+Why even start if you know nothing is different? irecord knows when React doesn't have any work to do so you only run `React.render()` when it does.
+
+
 ## Install
 
 ```
