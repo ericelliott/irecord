@@ -12,6 +12,10 @@ Written for the [Learn JavaScript with Eric Elliott](https://ericelliottjs.com/)
 Imagine a JavaScript object that just stores data. Now imagine that every time you change that object, the object emits a change event. Yeah, kindof like Backbone models, but different.
 
 
+## What is reactive programming?
+
+The concept of reactive programming, and more specifically, how it differs from event listeners and the observer pattern is sometimes hard for beginners. [Resources that might help](./reactive-programming.md).
+
 ### How is it different?
 
 When you change the value of a key, the previous value doesn't get erased. Instead, it gets added to a history. Every time you make a change, the new object state and the previous object state get emitted with the change event.
