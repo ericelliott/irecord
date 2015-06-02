@@ -50,6 +50,7 @@ const irecord = function (obj) {
         (ev) => ev[0]);
 
       this.subscribe = source.subscribe.bind(source);
+      this.filter = source.filter.bind(source);
     })
     .create();
 

@@ -67,6 +67,7 @@ var irecord = function irecord(obj) {
     });
 
     this.subscribe = source.subscribe.bind(source);
+    this.filter = source.filter.bind(source);
   }).create();
 
   return instance;

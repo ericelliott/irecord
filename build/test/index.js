@@ -10,6 +10,10 @@ var _indexJs = require('../index.js');
 
 var _indexJs2 = _interopRequireDefault(_indexJs);
 
+var _rx = require('./rx');
+
+var _rx2 = _interopRequireDefault(_rx);
+
 (0, _tape2['default'])('immutable', function (assert) {
   var original = {
     a: 'a',

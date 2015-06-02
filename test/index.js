@@ -2,6 +2,7 @@
 
 import test from 'tape';
 import irecord from '../index.js';
+import rx from './rx';
 
 test('immutable', (assert) => {
   const original = {
