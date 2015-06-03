@@ -52,6 +52,7 @@
     "faucet": "0.0.1",
     "nsp": "^1.0.1",
     "precommit-hook": "^2.0.1",
+    "require-all": "^1.1.0",
     "rimraf": "^2.3.4",
     "tape": "^4.0.0"
   },
