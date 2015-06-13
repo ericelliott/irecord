@@ -1,6 +1,6 @@
 {
   "name": "irecord",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An immutable object map that exposes an RxJS observable. Great for React.",
   "main": "build/index.js",
   "scripts": {
