@@ -15,7 +15,27 @@ test('immutable', (assert) => {
   assert.deepEqual(original, {
     a: 'a',
     b: 'b'
-  }, 'should not mutate original');
+  }, 'should not mutate original object');
+
+  assert.end();
+});
+
+
+test('immutable deep Array', (assert) => {
+  const input = {
+    a: [1, 2]
+  };
+
+  const original = {
+    a: [1, 2]
+  };
+
+  const record = irecord(input);
+
+  input.a.push(3);
+
+  assert.deepEqual(original.a, record.get('a').toJS(),
+    'should not mutate original deep array');
 
   assert.end();
 });
@@ -47,6 +67,7 @@ test('change events', (assert) => {
   record.set('c', 'c');
 });
 
+
 test('.get()', (assert) => {
   const record = irecord({
     a: 'a',
@@ -74,6 +95,7 @@ test('.set()', (assert) => {
   assert.end();
 });
 
+
 test('.set() & .get() deep', assert => {
   const record = irecord({});
   record.set('a.b.c', 'val');
@@ -83,6 +105,7 @@ test('.set() & .get() deep', assert => {
 
   assert.end();
 });
+
 
 test('.toJS', (assert) => {
   const obj = {

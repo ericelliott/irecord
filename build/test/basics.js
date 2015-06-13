@@ -22,7 +22,25 @@ var _indexJs2 = _interopRequireDefault(_indexJs);
   assert.deepEqual(original, {
     a: 'a',
     b: 'b'
-  }, 'should not mutate original');
+  }, 'should not mutate original object');
+
+  assert.end();
+});
+
+(0, _tape2['default'])('immutable deep Array', function (assert) {
+  var input = {
+    a: [1, 2]
+  };
+
+  var original = {
+    a: [1, 2]
+  };
+
+  var record = (0, _indexJs2['default'])(input);
+
+  input.a.push(3);
+
+  assert.deepEqual(original.a, record.get('a').toJS(), 'should not mutate original deep array');
 
   assert.end();
 });

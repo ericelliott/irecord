@@ -23,8 +23,10 @@ var _indexJs2 = _interopRequireDefault(_indexJs);
   });
 
   var stamp = (0, _stampit2['default'])({
-    countProps: function countProps() {
-      return Object.keys(this.toJS()).length;
+    methods: {
+      countProps: function countProps() {
+        return Object.keys(this.toJS()).length;
+      }
     }
   });
 

@@ -13,8 +13,10 @@ test('stamp composition with irecord', (assert) => {
   });
 
   const stamp = stampit({
-    countProps () {
-      return Object.keys(this.toJS()).length;
+    methods: {
+      countProps () {
+        return Object.keys(this.toJS()).length;
+      }
     }
   });
 

@@ -45,21 +45,21 @@
   },
   "homepage": "https://github.com/ericelliott/irecord",
   "devDependencies": {
-    "babel": "^5.4.7",
-    "babel-eslint": "^3.1.10",
+    "babel": "^5.5.7",
+    "babel-eslint": "^3.1.15",
     "dependency-check": "^2.4.0",
     "eslint": "^0.22.1",
     "faucet": "0.0.1",
     "nsp": "^1.0.1",
     "precommit-hook": "^2.0.1",
     "require-all": "^1.1.0",
-    "rimraf": "^2.3.4",
+    "rimraf": "^2.4.0",
     "tape": "^4.0.0"
   },
   "dependencies": {
     "dpath": "^1.0.0",
     "immutable": "^3.7.3",
     "rx": "^2.5.3",
-    "stampit": "^1.2.0"
+    "stampit": "^2.0.3"
   }
 }
