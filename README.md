@@ -1,4 +1,4 @@
-# irecord
+# irecord [![Build Status](https://travis-ci.org/ericelliott/irecord.svg?branch=master)](https://travis-ci.org/ericelliott/irecord)
 
 An immutable object map that exposes an RxJS observable.
 
