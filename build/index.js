@@ -45,7 +45,7 @@ var irecord = function irecord(obj) {
     instance.emit('change', { value: value, previous: previous });
   };
 
-  history.push(_immutable2['default'].Map(obj));
+  history.push(_immutable2['default'].fromJS(obj));
 
   stamp = _stampit2['default'].convertConstructor(_events2['default'].EventEmitter).methods({
     get: function get(key) {
@@ -62,7 +62,7 @@ var irecord = function irecord(obj) {
     toJS: function toJS() {
       return state().toJS();
     }
-  }).enclose(function () {
+  }).init(function () {
     var source = _rx2['default'].Observable.fromEvent(this, 'change', function (ev) {
       return ev[0];
     });

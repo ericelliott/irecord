@@ -24,7 +24,7 @@ const irecord = function (obj) {
     instance.emit('change', {value, previous});
   };
 
-  history.push(immutable.Map(obj));
+  history.push(immutable.fromJS(obj));
 
   stamp =
     stampit.convertConstructor(events.EventEmitter)
@@ -44,7 +44,7 @@ const irecord = function (obj) {
         return state().toJS();
       }
     })
-    .enclose(function () {
+    .init(function () {
       const source = Rx.Observable.fromEvent(
         this, 'change',
         (ev) => ev[0]);
