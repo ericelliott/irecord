@@ -2,9 +2,13 @@
 
 An immutable object map that exposes an RxJS observable.
 
-Great for React.
 
 Written for the [Learn JavaScript with Eric Elliott](https://ericelliottjs.com/) online JavaScript course series.
+
+
+## Status
+
+This project was an experiment and is no longer under active development, but if you're interested, I'm open to pull requests. I'll be happy to pass it along to a dedicated maintainer if you'd like to run with it.
 
 
 ## Wait, what is this thing?
