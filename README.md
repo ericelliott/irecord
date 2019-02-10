@@ -6,9 +6,9 @@ An immutable object map that exposes an RxJS observable.
 Written for the [Learn JavaScript with Eric Elliott](https://ericelliottjs.com/) online JavaScript course series.
 
 
-## Status
+## Status - DEPRECATED - try [lenses](https://medium.com/javascript-scene/lenses-b85976cb0534) or [transducers](https://medium.com/javascript-scene/transducers-efficient-data-processing-pipelines-in-javascript-7985330fe73d) instead.
 
-This project was an experiment and is no longer under active development, but if you're interested, I'm open to pull requests. I'll be happy to pass it along to a dedicated maintainer if you'd like to run with it.
+This project was an experiment and is no longer under active development.
 
 
 ## Wait, what is this thing?
